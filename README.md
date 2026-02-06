@@ -1,6 +1,6 @@
 ## TicTacToe-Task
-# Task 1 - Week 1: Building and Developing AI Models Bootcamp
-# Developed by: Amjad Althobaiti
+ Task 1 - Week 1: Building and Developing AI Models Bootcamp
+ Developed by: Amjad Althobaiti
 
 This project is a modern, web-based Tic-Tac-Toe game that integrates Generative AI for a challenging gameplay experience. It demonstrates the use of NumPy for game logic, Pandas for data analytics, and OpenAI's GPT-3.5 as a strategic opponent.
 
