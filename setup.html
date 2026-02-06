@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Setup</title>
+</head>
+<body>
+    <div class="glass-card animate-pop">
+        <img src="https://image2url.com/r2/default/images/1770412875924-cafb63fe-09a5-458d-b4ff-5a88fb96a9a0.png" class="game-logo">
+        <h1 class="neon-text">BATTLE SETUP</h1>
+        <form method="POST">
+            <div class="input-group">
+                <input type="text" name="player1_name" placeholder="YOUR NAME" required>
+                <select name="player1_symbol">
+                    <option value="X">CORE: X</option>
+                    <option value="O">CORE: O</option>
+                </select>
+            </div>
+            {% if mode == 'pvp' %}
+            <div class="input-group">
+                <input type="text" name="player2_name" placeholder="PILOT 2 NAME" required>
+            </div>
+            {% endif %}
+            <button type="submit" class="cyber-btn">INITIATE GAME</button>
+        </form>
+    </div>
+</body>
+</html>

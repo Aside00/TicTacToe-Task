@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Select Mode</title>
+</head>
+<body>
+    <div class="glass-card animate-pop">
+        <img src="https://image2url.com/r2/default/images/1770412875924-cafb63fe-09a5-458d-b4ff-5a88fb96a9a0.png" class="game-logo">
+        <h1 class="neon-text">🎮 CHOOSE MODE</h1>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+            <a href="/setup/pvp" class="cyber-btn">PLAYER vs PLAYER</a>
+            <a href="/setup/ai" class="cyber-btn" style="background: var(--neon-pink); box-shadow: 0 0 15px var(--neon-pink);">PLAYER vs AI (OpenAI)</a>
+        </div>
+    </div>
+</body>
+</html>

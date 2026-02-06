@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Battle Board</title>
+</head>
+<body>
+    <div class="main-container glass-card" style="padding: 20px;">
+        <img src="https://image2url.com/r2/default/images/1770412875924-cafb63fe-09a5-458d-b4ff-5a88fb96a9a0.png" class="small-logo">
+        <h1 class="neon-text" style="font-size: 1.5em;">TIC TAC TOE</h1>
+
+        <div class="status-bar">
+            <div class="p-card {% if turn == players_list[0] %}active{% endif %}">{{ players_list[0] }}</div>
+            <div style="color: var(--neon-blue); font-weight: bold;">VS</div>
+            <div class="p-card {% if turn == players_list[1] %}active{% endif %}">{{ players_list[1] }}</div>
+        </div>
+
+        {% if winner %}
+        <div class="overlay animate-pop">
+            <div class="modal">
+                <h1 class="neon-text" style="font-size: 3em;">{{ winner }}</h1>
+                <h2 style="color: white;">MISSION ACCOMPLISHED</h2>
+                <div style="margin-top: 20px;">
+                    <a href="/" class="cyber-btn">RESTART</a>
+                    <a href="/leaderboard" class="cyber-btn" style="background: var(--neon-blue);">STATS</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/index">
+            <div class="grid">
+                {% for r in range(3) %}
+                    {% for c in range(3) %}
+                        <button type="submit" 
+                                class="cell {% if board[r][c] == 'X' %}x-color{% elif board[r][c] == 'O' %}o-color{% endif %}" 
+                                onclick="this.form.row.value='{{r}}'; this.form.col.value='{{c}}'; this.disabled=true; this.form.submit();"
+                                {% if board[r][c] != "" or winner %} disabled {% endif %}>
+                            {{ board[r][c] }}
+                        </button>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <input type="hidden" name="row"> 
+            <input type="hidden" name="col">
+        </form>
+    </div>
+</body>
+</html>

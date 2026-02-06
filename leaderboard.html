@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Stats</title>
+</head>
+<body>
+    <div class="glass-card animate-pop">
+        <h1 class="neon-text">BATTLE STATS</h1>
+        <div style="max-height: 400px; overflow-y: auto;">
+            {{ table|safe }}
+        </div>
+        <a href="/" class="cyber-btn" style="margin-top: 20px;">BACK TO BASE</a>
+    </div>
+</body>
+</html>
